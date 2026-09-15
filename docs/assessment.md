@@ -115,6 +115,6 @@ The riskiest unknowns get spiked early, in the phase that first needs them:
 
 | Unknown | Spike in | Fallback if it fails |
 | --- | --- | --- |
-| Claude Agent SDK driving Ollama through `/v1/messages` | Phase 5 | Agent SDK for the cloud path. A direct Ollama adapter behind the same provider interface for local. Documented honestly. |
+| Claude Agent SDK driving Ollama through `/v1/messages` | **Done in Phase 1.** See [spike 001](spikes/001-agent-sdk-ollama/README.md): works, but a 4B model doesn't reliably call tools, so retrieval runs in code. | Direct `/v1/messages` runtime behind the same interface |
 | A 3–4B local model following citation format | Phase 6 | Constrained output format plus code-side citation repair and validation. Stronger model recommended in docs. |
 | Embedding all 269 episodes on 8 GB RAM in reasonable time | Phase 4 | Episode-subset ingestion flag for quick demos, plus Postgres full-text search as the lexical leg. |

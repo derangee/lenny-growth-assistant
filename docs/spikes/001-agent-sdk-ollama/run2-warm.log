@@ -1,0 +1,14 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+[claude-code:unrecognized_model] {"model":"qwen3:4b-instruct","query_source":"sdk"}
+[A] direct /v1/messages status=200 secs=4.8
+[A] text: The guest described the activation metric as "completing three projects in week one" [SYNTH-001].
+[B]   1.4s system subtype=init
+[B]  10.6s text: "I cannot determine what activation metric the guest described because there is no evidence provided in the search results to support this claim. I do not have access to the specific transcript content or any details about the guest's description of an activation metric. To answer this question accurately, I would need to search for relevant transcript content, but no such search has been conducted"
+[B]  10.6s result subtype=success is_error=False turns=1
+[B] total=10.7s tool_calls=[]
+[B] stderr tail: ⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+[claude-code:unrecognized_model] {"model":"qwen3:4b-instruct","query_source":"sdk"}
+[C]   1.1s system init
+[C]   4.9s text: 'The guest described the activation metric as "completing three projects in week one" [SYNTH-001].'
+[C]   4.9s result success error=False
+[C] total=5.0s

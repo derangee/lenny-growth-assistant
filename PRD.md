@@ -178,7 +178,7 @@ These fill gaps in the assignment. Each is a decision I can revisit.
 | **HTML artifact security** (XSS, exfiltration, phishing forms, parent-frame access) | Compromise of the app origin or the user | High if unmitigated | Server-side sanitization (scripts, event handlers, `javascript:` URLs, forms, external resources removed). Iframe with `sandbox` (no `allow-scripts`, no `allow-same-origin`), `srcdoc`, and a restrictive CSP. Malicious-payload tests. Limits documented. |
 | **Database failures** (Postgres down, migrations missing) | Lost sessions; API errors | Low–Medium | `/health/db`. Structured 503 errors with a clear message. Startup waits for DB health. Migrations run on start. Transactions per message exchange. |
 | **Corpus rights** | Takedown/licensing issue for a public repo | Low | Transcripts aren't committed. Fetched at ingestion from source with attribution. |
-| **Claude Agent SDK ↔ Ollama compatibility** | Agent layer can't serve the mandatory local demo | Medium | Spike in Phase 5. Fallback: direct Ollama adapter behind the same provider interface. Documented honestly. |
+| **Claude Agent SDK ↔ Ollama compatibility** | Agent layer can't serve the mandatory local demo | Low (was Medium) | Spike 001 (Phase 1) confirmed the SDK works against Ollama's Anthropic-compatible API. Fallback: a direct `/v1/messages` runtime behind the same interface. |
 
 ## 8. Implementation plan
 
@@ -191,7 +191,7 @@ Phased, with a test gate and a commit at the end of each phase:
 | 2 | Foundation | Monorepo, Compose (Postgres + API + web), `.env.example`, lint/format/test tooling, `/health`, `/health/db`, structured logs |
 | 3 | Sessions & persistence | Session/message/artifact models, migrations, session APIs, persistence tests |
 | 4 | Ingestion & retrieval | `ingest` command, chunking with provenance, hybrid retrieval, retrieval tests, hit-rate baseline |
-| 5 | Providers | Ollama + Anthropic behind one interface, configuration-driven, readiness + failure tests, Agent SDK spike result documented |
+| 5 | Providers | Ollama + Anthropic behind one interface, configuration-driven, readiness + failure tests, SDK re-verified inside the Linux container |
 | 6 | Grounded agent | Router + grounded-answer skill, citation validation, insufficient-evidence path, tests |
 | 7 | Ship 30 skill | Skill spec + prompt + validator + revision pass, tests |
 | 8 | Artifacts | Markdown/HTML generation, sanitization, sandboxed rendering, malicious-case tests |

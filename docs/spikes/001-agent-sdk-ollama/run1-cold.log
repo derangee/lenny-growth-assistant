@@ -1,0 +1,8 @@
+[A] direct /v1/messages status=200 secs=22.7
+[A] text: The guest described the activation metric as "completing three projects in week one" [SYNTH-001].
+[B]  42.3s system subtype=init
+[B]  50.8s text: 'I cannot determine what activation metric the guest described because there is no evidence available in the transcripts to support this claim. I would need to search for relevant transcript content to provide an accurate answer. [SYNTH-001]'
+[B]  50.8s result subtype=success is_error=False turns=1
+[B] total=50.9s tool_calls=[]
+[B] stderr tail: ⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+[claude-code:unrecognized_model] {"model":"qwen3:4b-instruct","query_source":"sdk"}
